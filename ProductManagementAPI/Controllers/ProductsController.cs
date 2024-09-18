@@ -7,7 +7,7 @@ using Services.Interfaces;
 namespace ProductManagementAPI.Controllers
 {
     [ApiController]
-    [Route("api/9_11_2024/[controller]")]
+    [Route("api/2024_09_11/products")]
     public class ProductsController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
@@ -36,14 +36,14 @@ namespace ProductManagementAPI.Controllers
             return NoContent();
         }
 
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
             await _productService.DeleteProduct(id);
             return NoContent();
         }
 
-        [HttpPut("id")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(UpdateProductDto id)
         {
             var p = await _productService.GetProductById(id.ProductId);
