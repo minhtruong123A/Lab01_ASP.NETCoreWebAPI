@@ -100,10 +100,10 @@ namespace ProductManagementAPI.Controllers
             return NoContent();
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, UpdateProductDto dto)
+        [HttpPut]
+        public async Task<IActionResult> UpdateProduct(UpdateProductDto dto)
         {
-            var p = await _productService.GetProductById(id);
+            var p = await _productService.GetProductById(dto.ProductId);
             if(p == null)
                 return NotFound();
 

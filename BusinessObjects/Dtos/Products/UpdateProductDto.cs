@@ -9,8 +9,8 @@ namespace BusinessObjects.Dtos.Products
 {
     public class UpdateProductDto
     {
-        //[Required]
-        //public int ProductId { get; set; }
+        [Required]
+        public int ProductId { get; set; }
         [StringLength(40)]
         public string ProductName { get; set; } = null!;
         public int? CategoryId { get; set; }
