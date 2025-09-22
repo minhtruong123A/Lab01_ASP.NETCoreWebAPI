@@ -18,5 +18,6 @@ namespace DataAccess.Repositories
             _storeContext = storeContext;
         }
         public async Task<List<Category>> GetAllCategories() => await _storeContext.Categories.ToListAsync();
+
     }
 }
